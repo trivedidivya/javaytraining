@@ -17,7 +17,7 @@ public static void main(String[] args) {
 	FlashCardsData fcd=new FlashCardsData(arr);
 	System.out.println("enter subject to be searched");
 	String s=sc.next();
-	fcd.searchCard(s);
+	System.out.println(fcd.searchCard(s));
 	
 }
 }

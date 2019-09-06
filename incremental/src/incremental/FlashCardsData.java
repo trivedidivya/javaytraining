@@ -15,12 +15,12 @@ public class FlashCardsData implements CardSearchable {
 		{
 			if(arr[i].getSubject().equals(sub))
 			{
-				System.out.println(arr[i]);
+				//System.out.println(arr[i]);
 				return arr[i];
-			}
+			}//System.out.println(arr[i]);
 				
 		}
-		return arr[0];
+		return null;
 		
 	}
 

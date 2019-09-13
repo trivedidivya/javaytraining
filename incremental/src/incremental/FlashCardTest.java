@@ -15,9 +15,23 @@ public static void main(String[] args) {
 		
 		}
 	FlashCardsData fcd=new FlashCardsData(arr);
-	System.out.println("enter subject to be searched");
-	String s=sc.next();
-	System.out.println(fcd.searchCard(s));
+	try
+	{
+		System.out.println("enter subject to be searched");
+		String s=sc.next();
+		Card c=fcd.searchCard(s);
+		if(c==null)
+		{
+			throw new CardNotFoundException();
+		}
+		else
+			System.out.println(c);
+	}
+	catch(CardNotFoundException ex)
+		{
+		System.out.println("Exception occured");
+		}
 	
 }
 }
+

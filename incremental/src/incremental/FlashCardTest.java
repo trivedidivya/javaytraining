@@ -12,7 +12,8 @@ public static void main(String[] args) {
 	for(int i=0;i<5;i++) 
 		{
 		arr[i]=new FlashCard(sc.next(),sc.next(),sc.next());
-		
+		DisplayThread t=new DisplayThread();
+		t.start();
 		}
 	FlashCardsData fcd=new FlashCardsData(arr);
 	try

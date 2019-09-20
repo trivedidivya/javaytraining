@@ -1,23 +1,26 @@
 package incremental;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FlashCardsData implements CardSearchable {
 
-	FlashCard arr[]=new FlashCard[5];
+	List<FlashCard> myCardsList=new ArrayList<>();
 	
-	public FlashCardsData(FlashCard[] arr) {
+	public FlashCardsData(List<FlashCard> myCardsList) {
 		super();
-		this.arr = arr;
+		this.myCardsList = myCardsList;
 	}
 
 	@Override
 	public Card searchCard(String sub) {
-		for(int i=0;i<arr.length;i++)
+		for(int i=0;i<myCardsList.size();i++)
 		{
-			if(arr[i].getSubject().equals(sub))
+			if(myCardsList.get(i).getSubject().equals(sub))
 			{
 				//System.out.println(arr[i]);
-				return arr[i];
-			}//System.out.println(arr[i]);
+				return myCardsList.get(i);
+			}
 				
 		}
 		return null;

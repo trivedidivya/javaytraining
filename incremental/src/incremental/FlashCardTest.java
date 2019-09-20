@@ -1,5 +1,7 @@
 package incremental;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class FlashCardTest {
@@ -8,14 +10,15 @@ public static void main(String[] args) {
 	
 	Scanner sc=new Scanner(System.in);
 	System.out.println("enter  subject ,answer and question");
-	FlashCard arr[]=new FlashCard[5];
+	List<FlashCard> myCardList=new ArrayList<>();
 	for(int i=0;i<5;i++) 
 		{
-		arr[i]=new FlashCard(sc.next(),sc.next(),sc.next());
+		FlashCard f=new FlashCard(sc.next(),sc.next(),sc.next());
+		myCardList.add(f);
 		DisplayThread t=new DisplayThread();
 		t.start();
 		}
-	FlashCardsData fcd=new FlashCardsData(arr);
+	FlashCardsData fcd=new FlashCardsData(myCardList);
 	try
 	{
 		System.out.println("enter subject to be searched");
